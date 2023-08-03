@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'create request' do
+describe 'customer_subscription create request' do
   before :each do
     test_data
   end

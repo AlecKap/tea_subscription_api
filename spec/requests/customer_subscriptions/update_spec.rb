@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'update request' do
+describe 'customer_subscriptionupdate request' do
   before :each do
     test_data
   end

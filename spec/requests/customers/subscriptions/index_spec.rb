@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'index request' do
+describe 'a customers subscriptions index request' do
   before :each do
     test_data
   end
