@@ -14,7 +14,7 @@ post {{domain}}/api/v0/users/:user_id/subscriptions/:subscription_id
 #response
 {
     "data": {
-        "message": "Successfully subscribed to #{subscription_name}"
+        "message": "Successfully created customer subscription."
     }
 }
 ```
@@ -26,7 +26,7 @@ patch {{domain}}/api/v0/users/:user_id/subscriptions/:subscription_id
 #response
 {
     "data": {
-        "message": "Successfully cancelled #{subscription_name} subscription"
+        "message": "Successfully cancelled customer subscription."
     }
 }
 ```
@@ -44,9 +44,7 @@ get {{domain}}/api/v0/users/:user_id/subscriptions
             "attributes": {
                 "title": "Free Trial",
                 "price": 30.72,
-                "frequency": "Payment in advance",
-                "status": "active",
-                "teas": []
+                "frequency": "Payment in advance"
             }
         },
         {
@@ -55,16 +53,7 @@ get {{domain}}/api/v0/users/:user_id/subscriptions
             "attributes": {
                 "title": "Premium",
                 "price": 25.03,
-                "frequency": "Payment in advance",
-                "status": "cancelled",
-                "teas": [
-                    {
-                        "name": "Lahijan"
-                    },
-                    {
-                        "name": "Houttuynia"
-                    }
-                ]
+                "frequency": "Payment in advance"
             }
         },
         {
@@ -73,19 +62,7 @@ get {{domain}}/api/v0/users/:user_id/subscriptions
             "attributes": {
                 "title": "Basic",
                 "price": 34.61,
-                "frequency": "Payment in advance",
-                "status": "active",
-                "teas": [
-                    {
-                        "name": "Biluochun"
-                    },
-                    {
-                        "name": "Vietnamese"
-                    },
-                    {
-                        "name": "Dill"
-                    }
-                ]
+                "frequency": "Payment in advance"
             }
         }
     ]
