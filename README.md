@@ -1,71 +1,123 @@
 # Tea Subscription API
 ## README
 ## About
-This is a RESTful API server application to allow users to subscribe, create, cancel, and view all their tea subscriptions.
+This is a RESTful API server application to allow customers to subscribe, create, cancel, and view all their tea subscriptions.
 ## Built with:
 - Ruby - V3.1.1
 - Rails - V7.0.6
 ## Endpoints
-### Subscribe to a subscription
+
+### Subscribe a customer to a tea subscription
 ```
 #request
-post {{domain}}/api/v0/users/:user_id/subscriptions/:subscription_id
+post {{domain}}/api/v0/customer_subscription
 
 #response
 {
-    "data": {
-        "message": "Successfully created customer subscription."
-    }
+  "data": {
+      "message": "Customer has been successfully subscribed."
+  }
 }
 ```
 ### Cancel a subscription
 ```
 #request
-patch {{domain}}/api/v0/users/:user_id/subscriptions/:subscription_id
+patch {{domain}}/api/v0/customer_subscriptions
 
 #response
 {
-    "data": {
-        "message": "Successfully cancelled customer subscription."
-    }
+  "data": {
+      "message": "Customer subscription has been cancelled."
+  }
 }
 ```
-### View all user subscriptions
+### View all subscriptions for a specific customer
 ```
 #request
-get {{domain}}/api/v0/users/:user_id/subscriptions
+get {{domain}}/api/v0/customers/:customer_id/subscriptions
 
 #response
 {
-    "data": [
-        {
-            "id": "1",
-            "type": "subscription",
-            "attributes": {
-                "title": "Free Trial",
-                "price": 30.72,
-                "frequency": "Payment in advance"
-            }
-        },
-        {
-            "id": "2",
-            "type": "subscription",
-            "attributes": {
-                "title": "Premium",
-                "price": 25.03,
-                "frequency": "Payment in advance"
-            }
-        },
-        {
-            "id": "3",
-            "type": "subscription",
-            "attributes": {
-                "title": "Basic",
-                "price": 34.61,
-                "frequency": "Payment in advance"
-            }
-        }
-    ]
+  "data": [
+    {
+      "id": "1",
+      "type": "subscription",
+      "attributes": {
+          "title": "Energey",
+          "price": 30.72,
+          "frequency": "5"
+      }
+    },
+    {
+      "id": "2",
+      "type": "subscription",
+      "attributes": {
+          "title": "Breakfast",
+          "price": 25.03,
+          "frequency": "3"
+      }
+    },
+    ...
+  ]
+}
+```
+### View all Subscriptions
+```
+#request
+get {{domain}}/api/v0/subscriptions
+
+#response
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "subscription",
+      "attributes": {
+          "title": "Energey",
+          "price": 30.72,
+          "frequency": "5"
+      }
+    },
+    {
+      "id": "2",
+      "type": "subscription",
+      "attributes": {
+          "title": "Breakfast",
+          "price": 25.03,
+          "frequency": "3"
+      }
+    },
+    {
+      "id": "3",
+      "type": "subscription",
+      "attributes": {
+          "title": "Sleepy Teas",
+          "price": 34.61,
+          "frequency": "6"
+      }
+    },
+    ...
+  ]
+}
+```
+### View one Subscription
+```
+#request
+get {{domain}}/api/v0/subscriptions/:subscription_id
+
+#response
+{
+  "data": {
+    {
+      "id": "2",
+      "type": "subscription",
+      "attributes": {
+          "title": "Breakfast",
+          "price": 25.03,
+          "frequency": "3"
+      }
+    }
+  }
 }
 ```
 ## Get a local copy of this repository
